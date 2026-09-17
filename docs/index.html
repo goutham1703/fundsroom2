@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northstar Supply ERP Documentation</title>
+  <style>
+    :root { color-scheme: light; --ink:#27333a; --muted:#71817f; --green:#176754; --pale:#e1f1eb; --line:#dfe8e4; --paper:#fff; --canvas:#f4f8f5; }
+    * { box-sizing:border-box; } body { margin:0; color:var(--ink); background:var(--canvas); font:15px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .shell { max-width:1080px; margin:auto; padding:32px 22px 70px; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:12px 0 70px; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:800; font-size:19px; letter-spacing:-.5px; }
+    .mark { display:grid; place-items:center; width:31px; height:31px; color:#fff; background:var(--green); border-radius:10px 10px 10px 2px; }
+    header a { color:var(--green); font-weight:700; text-decoration:none; }
+    .hero { max-width:720px; padding-bottom:54px; } .eyebrow { color:var(--green); font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; }
+    h1,h2 { letter-spacing:-1.3px; line-height:1.1; } h1 { max-width:680px; margin:14px 0 18px; font-size:clamp(40px,7vw,70px); } h2 { margin-top:0; font-size:26px; }
+    .hero p { max-width:650px; color:var(--muted); font-size:18px; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; } section { padding:27px; background:var(--paper); border:1px solid var(--line); border-radius:10px; }
+    ul { margin:0; padding-left:20px; color:var(--muted); } code { padding:3px 6px; border-radius:4px; background:#eef4f1; color:var(--green); font-size:.9em; } pre { overflow:auto; padding:16px; border-radius:7px; color:#d9f3e6; background:#183d35; }
+    .links { display:flex; flex-wrap:wrap; gap:10px; } .links a { padding:8px 12px; border-radius:6px; color:var(--green); background:var(--pale); font-weight:700; text-decoration:none; }
+    footer { padding-top:35px; color:var(--muted); font-size:13px; }
+    @media (max-width:700px) { header { padding-bottom:45px; } header a { display:none; } .grid { grid-template-columns:1fr; } section { padding:21px; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header><div class="brand"><span class="mark">F</span> fundsroom</div><a href="https://frontend-ochre-pi-68.vercel.app/">Open application &rarr;</a></header>
+    <main>
+      <div class="hero"><div class="eyebrow">Northstar Supply / ERP</div><h1>Operations documentation.</h1><p>A practical guide to the deployed manufacturing and supply workflow application: enquiry, quotation, sales order, reservation, and dispatch.</p></div>
+      <div class="grid">
+        <section><h2>Live services</h2><div class="links"><a href="https://frontend-ochre-pi-68.vercel.app/">Frontend application</a><a href="https://backend-kappa-two-35.vercel.app/api/health">Backend health</a><a href="https://github.com/goutham1703/fundsroom2">Source repository</a></div></section>
+        <section><h2>Roles</h2><ul><li><strong>ADMIN:</strong> approve quotations, confirm orders, and dispatch.</li><li><strong>SALES_USER:</strong> create enquiries, quotations, customers, and view availability.</li><li>Administrator signup requires the configured invite code.</li></ul></section>
+        <section><h2>Demo access</h2><ul><li>Admin: <code>admin@northstar.in</code> / <code>admin123</code></li><li>Sales: <code>sales@northstar.in</code> / <code>sales123</code></li><li>New accounts require a password of at least 8 characters.</li></ul></section>
+        <section><h2>Workflow</h2><ul><li>Capture a customer enquiry.</li><li>Prepare and send a quotation.</li><li>Convert an accepted quotation to a sales order.</li><li>Confirm the order and reserve inventory.</li><li>Create a dispatch and reduce available stock.</li></ul></section>
+        <section><h2>Local setup</h2><pre>cd frontend
+npm install
+npm run dev
+
+cd backend
+npm install
+npm start</pre></section>
+        <section><h2>Database</h2><p>The backend includes a Prisma PostgreSQL schema. Configure <code>DATABASE_URL</code>, then run:</p><pre>npm run prisma:generate
+npm run prisma:push
+npm run prisma:seed</pre></section>
+      </div>
+    </main>
+    <footer>Northstar Supply ERP &middot; Documentation for the deployed project</footer>
+  </div>
+</body>
+</html>
