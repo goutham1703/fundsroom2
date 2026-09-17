@@ -6,6 +6,7 @@ dist/
 
 # Local deployment metadata
 .vercel/
+docs/.vercel/
 
 # Environment files and secrets
 .env
